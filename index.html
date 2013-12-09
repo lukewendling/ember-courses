@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Courses</title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+</head>
+<body>
+
+  <script type='text/x-handlebars' data-template-name='application'>
+    <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
+      <div class='container'>
+        <div class='navbar-header'>
+          {{#link-to 'index' class='navbar-brand'}}Courses{{/link-to}}
+          <ul class='nav navbar-nav'>
+            <li>{{#link-to 'index'}}Link{{/link-to}}</li>
+            <li>{{#link-to 'index'}}Link{{/link-to}}</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {{outlet}}
+  </script>
+
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script src='//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.1.2/handlebars.min.js'></script>
+  <script src='//builds.emberjs.com/tags/v1.2.0/ember.js'></script>
+  <script src='vendor/ember-restless.js'></script>
+  <script src='//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js'></script>
+  <script src='app/application.js'></script>
+  <script src='app/models.js'></script>
+  <script src='app/router.js'></script>
+  <script src='app/controllers.js'></script>
+
+</body>
+</html>
