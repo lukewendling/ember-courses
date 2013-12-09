@@ -1,0 +1,26 @@
+{
+  "name": "ember-courses",
+  "version": "0.0.0",
+  "description": "Ember.js REST demo",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "test": "",
+    "start": "node-dev server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lukewendling/ember-courses.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukewendling/ember-courses/issues"
+  },
+  "devDependencies": {
+    "node-dev": "~2.1.4"
+  },
+  "dependencies": {
+    "express": "~3.4.6"
+  }
+}
