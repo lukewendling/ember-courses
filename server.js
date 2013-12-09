@@ -16,6 +16,43 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+function authenticatedRequest(req, res) {
+
+  return true; // TODO: rm when ready
+
+  var userToken = req.body.token || req.param('token') || req.headers.token;
+
+  if (!currentToken || userToken != currentToken) {
+    res.send(403, { error: 'Invalid token. You provided: ' + userToken });
+    return false;
+  }
+
+  return true;
+}
+
+var COURSES = [
+  {
+    subject: 'A',
+    code: '1',
+    title: 'aa',
+    description: ''
+  },
+  {
+    subject: 'B',
+    code: '2',
+    title: 'bb',
+    description: ''
+
+  },
+];
+
+app.get('/courses', function(req, res) {
+  if (authenticatedRequest(req, res)) {
+    res.send(COURSES);
+  }
+});
+
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Node server listening on port ' + app.get('port'));
 });
