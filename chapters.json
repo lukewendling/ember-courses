@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "resourceProvider": "CompassLearning Odyssey",
+    "subject": "Algebra I",
+    "grade": "13",
+    "chapterOrder": "1",
+    "chapterTitle": "Real Numbers",
+    "lessons": [
+      {
+        "id": 1,
+        "lessonOrder": "1",
+        "lessonTitle": "Absolute Value",
+        "resources": [
+          {
+            "id": 1,
+            "resourceOrder": "1",
+            "resourceTitle": "Absolute Value",
+            "resourceDescription": "Students will know the definition of absolute value and apply the definition to a number line.  Students will also simplify expressions that contain the absolute value of numbers. <!--Absolute value, number line-->",
+            "compassLearningResourceCode": "A1111",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1111",
+            "thumbNailUrl": ""
+          }
+        ]
+      }, {
+        "id": 2,
+        "lessonOrder": "2",
+        "lessonTitle": "Operations with Integers",
+        "resources": [
+          {
+            "id": 2,
+            "resourceOrder": "1",
+            "resourceTitle": "Adding ± Integers, Decimals, Fractions",
+            "resourceDescription": "Students will add integers, decimals and fractions. <!--Integers, decimals, fractions, addition-->",
+            "compassLearningResourceCode": "A1121",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1121",
+            "thumbNailUrl": ""
+          }, {
+            "id": 3,
+            "resourceOrder": "3",
+            "resourceTitle": "Subtracting ± Integers, Decimals, Fractions",
+            "resourceDescription": "Students will subtract integers, decimals and fractions. <!--Integers, decimals, fractions, subtraction-->",
+            "compassLearningResourceCode": "A1123",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1123",
+            "thumbNailUrl": ""
+          }, {
+            "id": 4,
+            "resourceOrder": "5",
+            "resourceTitle": "Multiplying ± Integers, Decimals, Fractions",
+            "resourceDescription": "Students will multiply integers, decimals and fractions. <!--Integers, decimals, fractions, multiplication-->",
+            "compassLearningResourceCode": "A1125",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1125",
+            "thumbNailUrl": ""
+          }
+        ]
+      }
+    ]
+  }
+]

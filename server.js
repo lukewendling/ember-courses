@@ -3,6 +3,7 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
+var CHAPTERS = require('./chapters.json');
 
 app.set('port', process.env.PORT || 4000);
 app.use(express.favicon());
@@ -30,58 +31,16 @@ function authenticatedRequest(req, res) {
   return true;
 }
 
-var COURSES = [
-  {
-    id: 1,
-    subject: 'A',
-    code: '1',
-    title: 'aa',
-    description: '',
-    course_items: [
-      {
-        id: 1,
-        localRefId: 'a',
-        type: 'aa',
-        title: 'aaa',
-        groupName: 'aaa'
-      },
-      {
-        id: 2,
-        localRefId: 'b',
-        type: 'bb',
-        title: 'bbb',
-        groupName: 'bbb'
-      }
-    ]
-  },
-  {
-    id: 2,
-    subject: 'B',
-    code: '2',
-    title: 'bb',
-    description: '',
-    course_items: [
-      {
-        id: 3,
-        localRefId: 'c',
-        type: 'cc',
-        title: 'ccc',
-        groupName: 'ccc'
-      },
-    ]
-  },
-];
-
-app.get('/courses', function(req, res) {
+app.get('/chapters', function(req, res) {
   if (authenticatedRequest(req, res)) {
-    res.send(COURSES);
+    res.send(CHAPTERS);
   }
 });
 
-app.get('/courses/:id', function(req, res) {
+app.get('/chapters/:id', function(req, res) {
   // TODO: use :id param
   if (authenticatedRequest(req, res)) {
-    res.send(COURSES[0]);
+    res.send(CHAPTERS[0]);
   }
 });
 

@@ -1,12 +1,17 @@
 App.Router.map(function () {
   this.route('login');
-  this.resource('courses', function () {
-    this.resource('course', { path: '/:course_id' });
+  this.resource('chapters', function () {
+    this.resource('chapter', { path: '/:chapter_id' }, function () {
+      this.resource('lessons', function () {
+        this.resource('lesson', { path: '/:lesson_id' }, function () {
+        });
+      });
+    });
   });
 });
 
-App.CoursesRoute = Ember.Route.extend({
+App.ChaptersRoute = Ember.Route.extend({
   model: function () {
-    return App.Course.fetch();
+    return App.Chapter.fetch();
   }
 });
