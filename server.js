@@ -53,7 +53,11 @@ app.post('/login', function(req, res) {
   console.log('req.body.password ' + req.body.password);
   //console.log(res);
   if ((req.body.username === 'bob') && (req.body.password === 'pass')) {
-    res.send(currentToken);
+    res.status(200);
+    res.send({ authToken: currentToken});
+  } else {
+    res.status(401);
+    res.send({ errorMessage: 'Authentication Failed'});
   }
 });
 http.createServer(app).listen(app.get('port'), function(){
