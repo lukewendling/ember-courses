@@ -28,7 +28,7 @@
   </script>
 
   <script type='text/x-handlebars' data-template-name='login'>
-    <form class="form-inline">
+    <form class="form-inline" {{action login on="submit"}}>
       <h2>Log In</h2>
       {{input value=username type="text" placeholder="Username"}}
       {{input value=password type="password" placeholder="Password"}}
