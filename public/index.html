@@ -4,21 +4,43 @@
 <title>Compass</title>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel='stylesheet' href='stylesheets/bootswatch-readable.css'>
+<link rel='stylesheet' href='//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css'>
 <link rel='stylesheet' href='stylesheets/style.css'>
 </head>
 <body>
 
-  <script type='text/x-handlebars' data-template-name='application'>
-    <nav class='navbar navbar-default navbar-fixed-top' role='navigation'>
-      <div class='container'>
-        <div class='navbar-header'>
-          {{#link-to 'index' class='navbar-brand'}}Compass{{/link-to}}
-          <ul class='nav navbar-nav'>
-            <li>{{#link-to 'chapters'}}Chapters{{/link-to}}</li>
-            <li>{{#link-to 'login'}}Login{{/link-to}}</li>
-          </ul>
-        </div>
+  <script type='text/x-handlebars' data-template-name='chapters'>
+    <nav class='navbar navbar-inverse navbar-fixed-top' role='navigation'>
+      <div class='navbar-header'>
+        <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-collapse-1'>
+          <span class='sr-only'>Toggle navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+        <a class='navbar-brand' href='/'>Compass</a>
+      </div>
+
+      <div class='collapse navbar-collapse' id='navbar-collapse-1'>
+        <ul class='nav navbar-nav'>
+          <li class='dropdown'>
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Chapters <b class='caret'></b></a>
+            <ul class='dropdown-menu'>
+            {{#each}}
+              <li>{{#link-to 'chapter' this}}{{subject}}{{/link-to}}</li>
+            {{/each}}
+            </ul>
+          </li>
+        </ul>
+        <form class='navbar-form navbar-left' role='search'>
+          <div class='form-group'>
+            <input type='text' class='form-control' placeholder='Search (TODO)'>
+          </div>
+          <button type='submit' class='btn btn-default'>Submit</button>
+        </form>
+        <ul class='nav navbar-nav navbar-right'>
+          <li>{{#link-to 'login'}}Sign in{{/link-to}}</li>
+        </ul>
       </div>
     </nav>
 
@@ -28,67 +50,40 @@
   </script>
 
   <script type='text/x-handlebars' data-template-name='login'>
-    <form class="form-inline" {{action login on="submit"}}>
-      <h2>Log In</h2>
-      {{input value=username type="text" placeholder="Username"}}
-      {{input value=password type="password" placeholder="Password"}}
-      {{input class="btn" type="submit" value="Log In"}}
-    </form>
-    {{#if errorMessage}}
-      <div class="alert alert-error">{{errorMessage}}</div>
-    {{/if}}
+    <div class='container'>
+      <form class='form-inline' {{action login on='submit'}}>
+        <h2>Log In</h2>
+        {{input value=username type='text' placeholder='Username'}}
+        {{input value=password type='password' placeholder='Password'}}
+        {{input class='btn' type='submit' value='Log In'}}
+      </form>
+      {{#if errorMessage}}
+        <div class='alert alert-error'>{{errorMessage}}</div>
+      {{/if}}
+    </div>
   </script>
 
   <script type='text/x-handlebars' data-template-name='chapter'>
     <div class='row'>
-      <ul>
-        {{#each lessons}}
-        <li>{{#link-to 'lesson' this}}{{lessonTitle}}{{/link-to}}</li>
-        {{/each}}
-      </ul>
-    </div>
-
-    {{outlet}}
-  </script>
-
-  <script type='text/x-handlebars' data-template-name='lesson'>
-    <div class='row'>
-      <ul>
-        {{#each resources}}
-        <li>{{resourceTitle}}</li>
-        {{/each}}
-      </ul>
-    </div>
-
-    {{outlet}}
-  </script>
-
-  <script type='text/x-handlebars' data-template-name='chapters'>
-    <div class='row'>
-      <div class='panel-heading'>
-        <h3 class='panel-title'>Chapters</h3>
-      </div>
-      <div class='panel-body'>
-        <table class='table table-striped'>
-          <thead>
-            <tr>
-              <th>Subject</th>
-            </tr>
-          </thead>
-          <tbody>
-          {{#each}}
-            <tr>
-              <td>
-                {{#link-to 'chapter' this}}{{subject}}{{/link-to}}
-              </td>
-            </tr>
+      <section class='col-lg-4'>
+        <h3>Chapter: {{subject}} ({{chapterTitle}})</h3>
+        <ul id='chapters-list'>
+          {{#each lessons}}
+          <li>
+            <strong>{{lessonTitle}}</strong>
+            <ul id='resources-list'>
+              {{#each resources}}
+                <li><a href='#' data-url='{{unbound ltiDataEndPoint}}'>{{resourceTitle}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
           {{/each}}
-          </tbody>
-        </table>
-      </div>
+        </ul>
+      </section>
+      <section class='col-lg-8'>
+        <iframe class='content'>Content will load here...</iframe>
+      </section>
     </div>
-    
-    {{outlet}}
   </script>
 
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
@@ -100,6 +95,7 @@
   <script src='app/models.js'></script>
   <script src='app/router.js'></script>
   <script src='app/controllers.js'></script>
+  <script src='app/views.js'></script>
 
 </body>
 </html>

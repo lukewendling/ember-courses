@@ -58,6 +58,13 @@ app.get('/chapters/:id', function(req, res) {
   }
 });
 
+app.get('/lessons/:id', function(req, res) {
+  // TODO: use :id param
+  if (authenticatedRequest(req, res)) {
+    res.send(CHAPTERS[0].lessons[0]);
+  }
+});
+
 app.post('/login', function(req, res) {
   console.log('req.params ' + req.params);
   console.log('req.body ' + req.body);
@@ -72,6 +79,7 @@ app.post('/login', function(req, res) {
     res.send({ errorMessage: 'Authentication Failed'});
   }
 });
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Node server listening on port ' + app.get('port'));
 });

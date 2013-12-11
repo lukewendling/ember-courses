@@ -20,7 +20,7 @@
             "compassLearningResourceCode": "A1111",
             "compassLearningResourceType": "LearningActivity",
             "resourceType": "LTI Link",
-            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1111",
+            "ltiDataEndPoint": "/sklunk/index.html",
             "thumbNailUrl": ""
           }
         ]
@@ -37,7 +37,7 @@
             "compassLearningResourceCode": "A1121",
             "compassLearningResourceType": "LearningActivity",
             "resourceType": "LTI Link",
-            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1121",
+            "ltiDataEndPoint": "/sklunk/index.html",
             "thumbNailUrl": ""
           }, {
             "id": 3,
@@ -47,7 +47,7 @@
             "compassLearningResourceCode": "A1123",
             "compassLearningResourceType": "LearningActivity",
             "resourceType": "LTI Link",
-            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1123",
+            "ltiDataEndPoint": "/sklunk/index.html",
             "thumbNailUrl": ""
           }, {
             "id": 4,
@@ -57,7 +57,72 @@
             "compassLearningResourceCode": "A1125",
             "compassLearningResourceType": "LearningActivity",
             "resourceType": "LTI Link",
-            "ltiDataEndPoint": "www.thelearningodyssey.com/lti/resources/learningactivity/A1125",
+            "ltiDataEndPoint": "/sklunk/index.html",
+            "thumbNailUrl": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "resourceProvider": "CompassLearning Odyssey",
+    "subject": "European History",
+    "grade": "13",
+    "chapterOrder": "1",
+    "chapterTitle": "The Kings",
+    "lessons": [
+      {
+        "id": 10,
+        "lessonOrder": "1",
+        "lessonTitle": "King George",
+        "resources": [
+          {
+            "id": 100,
+            "resource_order": "1",
+            "resourceTitle": "Lorem Ipsum Dolor Sit Amet",
+            "resourceDescription": "Students will know the definition of absolute value and apply the definition to a number line.  Students will also simplify expressions that contain the absolute value of numbers. <!--Absolute value, number line-->",
+            "compassLearningResourceCode": "A1111",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "/sklunk/index.html",
+            "thumbNailUrl": ""
+          }
+        ]
+      }, {
+        "id": 20,
+        "lessonOrder": "2",
+        "lessonTitle": "King Henry",
+        "resources": [
+          {
+            "id": 200,
+            "resourceOrder": "1",
+            "resourceTitle": "Lorem Ipsum Dolor Sit Amet",
+            "resourceDescription": "Lorem Ipsum Dolor Sit Amet",
+            "compassLearningResourceCode": "A1121",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "/sklunk/index.html",
+            "thumbNailUrl": ""
+          }, {
+            "id": 300,
+            "resourceOrder": "3",
+            "resourceTitle": "Lorem Ipsum Dolor Sit Amet",
+            "resourceDescription": "Lorem Ipsum Dolor Sit Amet",
+            "compassLearningResourceCode": "A1123",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "/sklunk/index.html",
+            "thumbNailUrl": ""
+          }, {
+            "id": 400,
+            "resourceOrder": "5",
+            "resourceTitle": "Lorem Ipsum Dolor Sit Amet",
+            "resourceDescription": "Lorem Ipsum Dolor Sit Amet",
+            "compassLearningResourceCode": "A1125",
+            "compassLearningResourceType": "LearningActivity",
+            "resourceType": "LTI Link",
+            "ltiDataEndPoint": "/sklunk/index.html",
             "thumbNailUrl": ""
           }
         ]
