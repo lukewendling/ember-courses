@@ -5,6 +5,8 @@ var express = require('express')
 var app = express();
 var CHAPTERS = require('./chapters.json');
 
+var currentToken = 'ABCDEFGHIJKLMNOP';
+
 app.set('port', process.env.PORT || 4000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -44,6 +46,16 @@ app.get('/chapters/:id', function(req, res) {
   }
 });
 
+app.post('/login', function(req, res) {
+  console.log('req.params ' + req.params);
+  console.log('req.body ' + req.body);
+  console.log('req.body.username ' + req.body.username);
+  console.log('req.body.password ' + req.body.password);
+  //console.log(res);
+  if ((req.body.username === 'bob') && (req.body.password === 'pass')) {
+    res.send(currentToken);
+  }
+});
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Node server listening on port ' + app.get('port'));
 });
