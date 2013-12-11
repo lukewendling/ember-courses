@@ -21,12 +21,22 @@ if ('development' == app.get('env')) {
 
 function authenticatedRequest(req, res) {
 
-  return true; // TODO: rm when ready
+  console.log('authenticatedRequest: ' + 
+    'req.body.token: ' + req.body.token + ', ' + 
+    "req.param('token'): " + req.param('token') + ', ' +
+    'req.headers.token: ' + req.headers.token 
+    );
+
+  //return true; // TODO: rm when ready
 
   var userToken = req.body.token || req.param('token') || req.headers.token;
 
+  console.log('authenticatedRequest: ' + 
+    'userToken: ' + userToken + ', ' + 
+    'userToken != currentToken: ' + (userToken != currentToken) 
+    );
   if (!currentToken || userToken != currentToken) {
-    res.send(403, { error: 'Invalid token. You provided: ' + userToken });
+    res.send(401, { error: 'Invalid or missing token. You provided: ' + userToken });
     return false;
   }
 
@@ -34,6 +44,7 @@ function authenticatedRequest(req, res) {
 }
 
 app.get('/chapters', function(req, res) {
+  console.log("in app.get('/chapters' ");
   if (authenticatedRequest(req, res)) {
     res.send(CHAPTERS);
   }
@@ -41,6 +52,7 @@ app.get('/chapters', function(req, res) {
 
 app.get('/chapters/:id', function(req, res) {
   // TODO: use :id param
+  console.log("in app.get('/chapters/:id' ");
   if (authenticatedRequest(req, res)) {
     res.send(CHAPTERS[0]);
   }
