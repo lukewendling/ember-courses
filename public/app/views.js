@@ -10,3 +10,10 @@ App.ChapterView = Ember.View.extend({
     // init jquery plugins here
   }
 });
+
+App.ChaptersView = Ember.View.extend({
+  templateName: 'chapters',
+  didInsertElement: function () {
+    this.$('#chapters-menu').popover('show');
+  }
+});

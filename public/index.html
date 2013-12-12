@@ -24,7 +24,7 @@
       <div class='collapse navbar-collapse' id='navbar-collapse-1'>
         <ul class='nav navbar-nav'>
           <li class='dropdown'>
-            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Chapters <b class='caret'></b></a>
+            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Chapters <b class='caret' id='chapters-menu' data-placement='bottom' data-content='Start here'></b></a>
             <ul class='dropdown-menu'>
             {{#each}}
               <li>{{#link-to 'chapter' this}}{{subject}}{{/link-to}}</li>
@@ -50,16 +50,18 @@
   </script>
 
   <script type='text/x-handlebars' data-template-name='chapters/index'>
+    <div class='page-header'>
+      <h1>Welcome to Compass! <small>This is awesome!</small></h1>
+    </div>
     <div class='jumbotron'>
-      <h1>Welcome to Compass!</h1>
       <p>Select a chapter above to get started</p>
       <p><a class='btn btn-primary btn-lg' role='button'>Learn more</a></p>
     </div>
   </script>
 
   <script type='text/x-handlebars' data-template-name='login'>
-    <div class='container'>
-      <div class='jumbotron'>
+    <div class='jumbotron'>
+      <div class='container'>
         <form class='form-inline' {{action login on='submit'}}>
           <h3>Log In</h3>
           {{input value=username type='text' placeholder='Username'}}
